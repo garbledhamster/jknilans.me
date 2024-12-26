@@ -1,0 +1,167 @@
+/* ==========================================================================
+   🍭 colors.css
+   - Master color variables + overrides for ALL colors found in main.css
+   ========================================================================== */
+
+/* 1) Define color variables */
+:root {
+    /* ------------------------------------------------------------------------
+       Primary Body & Text
+       ------------------------------------------------------------------------ */
+    --color-body-bg: #001F3F;                       /* Main dark navy background */
+    --color-body-overlay: rgba(46, 49, 65, 0.8);    /* Background overlay on body */
+    --color-text-primary: #F2F8F5;                  /* Light text color */
+  
+    /* ------------------------------------------------------------------------
+       Accents, Borders, & Interactive States
+       ------------------------------------------------------------------------ */
+    --color-accent: #8BA89E;                        /* Greenish accent (spotlight) */
+    --color-accent-border: rgba(139, 168, 158, 0.125);
+    --color-accent-hover-bg: rgba(139, 168, 158, 0.025);
+    --color-accent-active-bg: rgba(255, 255, 255, 0.075);
+    --color-link-underline: rgba(255, 255, 255, 0.35);
+    --color-border-focus: #5b6ba6;                  /* Input/textarea focus border */
+    --color-button-icon: #6A8C8B;                   /* Icon color in .button.primary */
+  
+    /* ------------------------------------------------------------------------
+       Additional Wrappers & Sections
+       ------------------------------------------------------------------------ */
+    --color-bg-111111: #111111;   /* .wrapper.style2, .features articles, etc. */
+    --color-bg-3d4051: #3d4051;   /* .wrapper.style3 */
+    --color-bg-454858: #454858;   /* .wrapper.style4 */
+    --color-bg-4d5060: #4d5060;   /* .wrapper.style5 */
+    --color-bg-555867: #555867;   /* .wrapper.style6 */
+  
+    /* ------------------------------------------------------------------------
+       Spotlight Variations (2..6)
+       (Used in .wrapper.spotlight.styleN)
+       ------------------------------------------------------------------------ */
+    --color-bg-53639e: #53639e;   /* .wrapper.spotlight.style2 */
+    --color-bg-3f4e85: #3f4e85;   /* .wrapper.spotlight.style3 */
+    --color-bg-39477c: #39477c;   /* .wrapper.spotlight.style4 */
+    --color-bg-324072: #324072;   /* .wrapper.spotlight.style5 */
+    --color-bg-2d3a69: #2d3a69;   /* .wrapper.spotlight.style6 */
+  }
+  
+  /* 2) Example: Core Overrides to Use These Variables */
+  
+  /* Body background & text color */
+  body {
+    background-color: var(--color-body-bg) !important;
+    color: var(--color-text-primary) !important;
+    /* 
+       If you also need to override the overlay effect, 
+       you can do so in your main layout or body::before 
+       with var(--color-body-overlay). 
+    */
+  }
+  
+  /* Anchors & Links */
+  a {
+    color: var(--color-text-primary) !important;
+    border-bottom: dotted 1px var(--color-link-underline) !important;
+  }
+  a:hover {
+    color: var(--color-accent) !important;
+    border-bottom-color: transparent !important;
+  }
+  
+  /* Generic Borders & Focus States */
+  hr,
+  .box,
+  table tbody tr,
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="tel"],
+  select,
+  textarea {
+    border-color: var(--color-accent-border) !important;
+  }
+  input:focus,
+  select:focus,
+  textarea:focus {
+    border-color: var(--color-border-focus) !important;
+  }
+  
+  /* Buttons */
+  .button,
+  input[type="submit"],
+  input[type="reset"],
+  input[type="button"],
+  button {
+    background-color: transparent !important;
+    box-shadow: inset 0 0 0 2px var(--color-accent-border) !important;
+    color: var(--color-text-primary) !important;
+  }
+  .button:hover,
+  input[type="submit"]:hover,
+  input[type="reset"]:hover,
+  input[type="button"]:hover,
+  button:hover {
+    background-color: var(--color-accent-hover-bg) !important;
+  }
+  .button:active,
+  input[type="submit"]:active,
+  input[type="reset"]:active,
+  input[type="button"]:active,
+  button:active {
+    background-color: var(--color-accent-active-bg) !important;
+  }
+  
+  /* Primary "Spotlight" Wrapper */
+  .wrapper.spotlight {
+    background-color: var(--color-accent) !important; 
+    /* Replace with any var(--color-bg-xxx) to see immediate effect! */
+  }
+  
+  /* ------------------------------------------------------------------------
+     Additional Wrappers & Style Variations
+     (These appear in your main.css with .wrapper.style2/.style3/etc.)
+     ------------------------------------------------------------------------ */
+  .wrapper.style2 {
+    background-color: var(--color-bg-111111) !important;
+  }
+  .wrapper.style3 {
+    background-color: var(--color-bg-3d4051) !important;
+  }
+  .wrapper.style4 {
+    background-color: var(--color-bg-454858) !important;
+  }
+  .wrapper.style5 {
+    background-color: var(--color-bg-4d5060) !important;
+  }
+  .wrapper.style6 {
+    background-color: var(--color-bg-555867) !important;
+  }
+  
+  /* Spotlight variations: .wrapper.spotlight.styleN */
+  .wrapper.spotlight.style2 {
+    background-color: var(--color-bg-53639e) !important;
+  }
+  .wrapper.spotlight.style3 {
+    background-color: var(--color-bg-3f4e85) !important;
+  }
+  .wrapper.spotlight.style4 {
+    background-color: var(--color-bg-39477c) !important;
+  }
+  .wrapper.spotlight.style5 {
+    background-color: var(--color-bg-324072) !important;
+  }
+  .wrapper.spotlight.style6 {
+    background-color: var(--color-bg-2d3a69) !important;
+  }
+  
+  /*
+   * 🍿 That's it! Now you have a single file (colors.css)
+   *    with variables for ALL the colors in main.css. 
+   *    Swap out any hex or RGBA values to experiment.
+   *
+   * 📝 Tip: Make sure to link colors.css AFTER your main.css:
+   *
+   * <link rel="stylesheet" href="assets/css/main.css">
+   * <link rel="stylesheet" href="assets/css/colors.css">
+   *
+   * Happy styling!
+   */
+  
